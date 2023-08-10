@@ -6,7 +6,7 @@ from PIL import Image
 movies_dict=pickle.load(open('movie_dict.pkl','rb'))
 movies=pd.DataFrame(movies_dict)
 similarity=pickle.load(open('similarity.pkl','rb'))
-
+st.set_page_config(page_title='Movie Recommendation System', layout='wide')
 def fetch_poster(movie_id):
     response = requests.get(
         'https://api.themoviedb.org/3/movie/{}?api_key=66de26666afe6e2669c627789a84fbc6&language=en-US'.format(movie_id))
